@@ -1,0 +1,37 @@
+.logo {
+  width: 100px;
+}
+
+q {
+  font-style: italic;
+  font-size: 1.2rem;
+  quotes: "« " " »";
+}
+.book {
+  margin-left: 500px;
+}
+.lead {
+  font-weight: bold;
+  margin-right: 650px;
+  margin-top: 150px;
+}
+.img-fluid
+{
+
+  width: 600px;
+}
+.card-img, .card-img-top {
+  border-top-left-radius: var(--bs-card-inner-border-radius);
+  border-top-right-radius: var(--bs-card-inner-border-radius);
+  width: 100%;
+  margin-left: 200px;
+  margin-bottom: 90px;
+}
+.my-3 {
+  margin-top: -2rem !important;
+  margin-bottom: 1rem !important;
+  margin-left: 200px;
+}
+.container{
+  height: 700px;
+}

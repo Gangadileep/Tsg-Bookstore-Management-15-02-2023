@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-5 d-none d-sm-inline" style=" font-weight: bold;">BOOKSTORE</span>
+        </a>
+        <br />
+        <br />
+        <!-- HOME  -->
+        <a class="nav-item nav-link text-uppercase" routerLinkActive="active">
+          <i class="fas fa-home"></i>
+          <span translate>Home</span>
+        </a>
+        <!-- USER VIEW BOOKS -->
+        <br />
+        <a [routerLink]="['/userview']" class="nav-item nav-link text-uppercase" routerLinkActive="active">
+          <i class="fas fa-book"></i>
+          <span translate>Books</span>
+        </a>
+        <br />
+        <!-- LOGOUT BUTTON -->
+        <a (click)="logout()" class="nav-item nav-link text-uppercase" routerLinkActive="active">
+          <i class="fa fa-sign-out"></i>
+          <span translate>Logout</span>
+        </a>
+        <hr />
+      </div>
+    </div>
+    <!-- BOOKSTORE DETAILS ON DASHBOARD -->
+      <div class="container">
+        <div class="row">
+          <div class="card col-md-3">
+            <div>
+              <img
+                src="../../assets/BOOKPIC.png"
+                alt="login form" class="card-img-top" />
+            </div>
+          </div>
+        </div>
+      </div>
+  

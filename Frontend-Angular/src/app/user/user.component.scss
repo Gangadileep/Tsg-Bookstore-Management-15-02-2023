@@ -1,0 +1,24 @@
+.info {
+  font-size: 1.2rem;
+  font-weight: italic;
+  margin-top: 30px;
+  margin-right: 100px;
+}
+.text {
+  margin-right: 100px;
+  margin-top: 40px;
+}
+.card-img, .card-img-top {
+  border-top-left-radius: var(--bs-card-inner-border-radius);
+  border-top-right-radius: var(--bs-card-inner-border-radius);
+  width: 1316px;
+}
+span .fs-5 d-none d-sm-inline{
+  font-weight: bold;
+}
+.container{
+  height: 400%;
+}
+.container-fluid{
+  height: 400%;
+}

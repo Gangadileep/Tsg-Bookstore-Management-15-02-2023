@@ -1,0 +1,53 @@
+
+<section class="border p-4 mb-4 d-flex align-items-center flex-column">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- CONTAINER WRAPPER -->
+    <div class="container-fluid">
+      <!-- NAVBAR BRAND -->
+      <a [routerLink]="['/user']" class="navbar-brand">Home</a>
+      <!-- TOGGLE BUTTON -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- SEARCH FORM -->
+        <form (ngSubmit)="search()" [formGroup]="searchForm" novalidate>
+          <div class="input-group ">
+            <input type="search" class="form-control" formControlName="search_value" id="search_value"
+              placeholder="Search by Bookname and Author" />
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-dark cursive">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+        <button type="button" (click)="logout()" class="btn btn-outline-dark ml-3">Logout</button>
+      </div>
+    </div>
+  </nav>
+</section>
+
+<!-- LOPPING OF BOOK DATAS -->
+<div class="book" >
+<div class="container" >
+  <div class="row">
+    <div class="card col-md-3" *ngFor="let book of data">
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&w=1000&q=80"
+          alt="login form" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ book.bookname }}</h5>
+          <p class="card-text">ISBN: {{ book.isbn }}</p>
+          <p class="card-text">Author: {{ book.author }}</p>
+          <p class="card-text">Category: {{ book.category }}</p>
+          <p class="card-text">Price: {{ book.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

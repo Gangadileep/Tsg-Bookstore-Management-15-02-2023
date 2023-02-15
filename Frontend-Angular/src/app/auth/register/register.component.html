@@ -1,0 +1,75 @@
+<section class="h-100 h-custom" style="background-color: #8fc4b7">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp" class="w-100"
+            style="border-top-left-radius: 0.3rem; border-top-right-radius: 0.3rem" alt="Sample photo" />
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+
+            <form (ngSubmit)="register()" [formGroup]="registerForm" novalidate>
+              <div class="alert alert-danger" [hidden]="!error || isLoading" translate>
+                Username or password incorrect.
+              </div>
+              <div class="m-3">
+                <!-- FULLNAME FIELD -->
+                <label class="d-block my-3">
+                  <input type="text" class="form-control" formControlName="fullname" autocomplete="fullname"
+                    [placeholder]="'fullname'" />
+                  <span hidden translate>Fullname</span>
+                  <small
+                    [hidden]="registerForm.controls['username'].valid || registerForm.controls['fullname'].untouched"
+                    class="text-danger" translate>
+                    Fullname is required with minimum length of 3
+                  </small>
+                </label>
+                <label class="d-block mb-3">
+                  <input type="username" class="form-control" formControlName="username" autocomplete="current-username"
+                    [placeholder]="'username'" required />
+                  <span hidden translate>username</span>
+                  <small
+                    [hidden]="registerForm.controls['username'].valid || registerForm.controls['username'].untouched"
+                    class="text-danger" translate>
+                    Username is required with minimum length of 
+                  </small>
+                </label>
+                <label class="d-block mb-3">
+                  <input type="password" class="form-control" formControlName="password" autocomplete="current-password"
+                    [placeholder]="'Password'" required />
+                  <span hidden translate>Password</span>
+                  <small
+                    [hidden]="registerForm.controls['password'].valid || registerForm.controls['password'].untouched"
+                    class="text-danger" translate>
+                    At least 8 characters in length
+                    <br>
+                    Contains at least one digit
+                    <br>
+                    Contains at least one lowercase letter
+                    <br>
+                    Contains at least one uppercase letter
+                    <br>
+                    Contains at least one special character (e.g. !@#$%^&*())
+                  </small>
+                </label>
+                <div class="m-3">
+                  <button class="btn btn-primary w-100" type="submit" [disabled]="registerForm.invalid || isLoading">
+                    <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+                    <span translate>Register</span>
+                  </button>
+                </div>
+                <div class="text-center">
+                  <p>Already have an Account:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1" [routerLink]="['/login']">
+                    <i class="register">Login Here</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

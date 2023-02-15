@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  box-sizing: border-box;
+}
+.fullpage {
+  height: 100%;
+  width: 100%;
+  background-color: #9a616d;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  place-items: center;
+  background-repeat: no-repeat;
+}
+table {
+  width: 600px;
+  box-shadow: -1px 12px 12px -6px rgba(0, 0, 0, 0.5);
+  margin-inline-start: 400px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding-bottom: 500px;
+}
+table,
+td,
+th {
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+  text-align: center;
+  cursor: pointer;
+}
+td {
+  font-size: 18px;
+}
+th {
+  background-color: grey;
+  color: white;
+}
+tr:nth-child(odd) {
+  background-color: white;
+}
+tr:nth-child(even) {
+  background-color: white;
+}
+.add {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.add:hover {
+  color: green;
+}
+.delete {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.delete:hover {
+  color: red;
+}
+.tab {
+  position: relative;
+  z-index: #999;
+  margin-top: 60px;
+  display: block;
+  place-items: center;
+  float: inline-start;
+  margin-left: 123px;
+}
+.action {
+  padding: 50px;
+}
+.category {
+  margin-left: 500px;
+  font-size: 1.8em;
+  margin-top: 40px;
+  font-style: bold;
+}

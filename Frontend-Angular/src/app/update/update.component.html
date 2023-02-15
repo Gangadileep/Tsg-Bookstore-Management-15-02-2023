@@ -1,0 +1,71 @@
+<div class="login-box">
+  <div class="container">
+    <div class="card col-md-6 mt-3 mx-auto">
+      <div class="card-body">
+        <h4 class="card-title text-center">EDIT BOOK</h4>
+        <form (ngSubmit)="edit(id)" [formGroup]="editForm" novalidate>
+          <div class="alert alert-danger" [hidden]="!error || isLoading" translate></div>
+          <div class="m-3">
+            <!-- ISBN FIELD -->
+            <div class="col-md-12">
+              <label>ISBN</label> <input type="text" class="form-control" formControlName="isbn" id="isbn" required />
+              <small [hidden]="editForm.controls['isbn'].valid || editForm.controls['isbn'].untouched"
+                class="text-danger" translate>
+                ISBN is required and must be 13 digits
+              </small>
+            </div>
+            <!-- BOOKNAME FIELD-->
+            <div class="col-md-12">
+              <label>Bookname</label>
+              <input type="text" class="form-control" formControlName="bookname" id="bookname" required />
+              <small [hidden]="editForm.controls['bookname'].valid || editForm.controls['bookname'].untouched"
+                class="text-danger" translate>
+                Bookname is required
+              </small>
+            </div>
+            <!-- AUTHOR FIELD-->
+            <div class="col-md-12">
+              <label>Author</label><input type="text" class="form-control" formControlName="author" id="author"
+                required />
+                <small [hidden]="editForm.controls['author'].valid || editForm.controls['author'].untouched"
+                class="text-danger" translate>
+                Author is required
+              </small>
+            </div>
+            <!-- CATEGORY FIELD-->
+            <div class="col-md-12">
+              <label>Category</label>
+              <select class="form-select mt-3" formControlName="category" id="category" required>
+                <option *ngFor="let i of data" [value]="i.id">{{ i.category }}</option>
+              </select>
+            </div>
+            <!-- PRICE FIELD-->
+            <div class="col-md-12">
+              <label>Price</label> <input type="tel" class="form-control" formControlName="price" id="price" required />
+              <small [hidden]="editForm.controls['price'].valid || editForm.controls['price'].untouched"
+              class="text-danger" translate>
+              Price is required
+            </small>
+            </div>
+            <!-- ADMINID FIELD-->
+            <div class="col-md-12">
+              <label>Admin Id</label>
+              <input type="tel" class="form-control" formControlName="adminid" id="adminid" required />
+              <small [hidden]="editForm.controls['adminid'].valid || editForm.controls['adminid'].untouched"
+              class="text-danger" translate>
+              Admin Id is required 
+            </small>
+            </div>
+            <!-- ADD BUTTON -->
+            <div class="m-3">
+              <button class="btn btn-primary w-100" type="submit" [disabled]="editForm.invalid || isLoading">
+                <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+                <span translate>Add</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

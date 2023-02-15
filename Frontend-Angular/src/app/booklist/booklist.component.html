@@ -1,0 +1,43 @@
+<!-- TABLE FOR BOOK LIST -->
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <!-- HEADER ROW -->
+    <tr>
+      <th scope="col" class="action">Id</th>
+      <th scope="col" class="action">BookName</th>
+      <th scope="col" class="action">ISBN</th>
+      <th scope="col" class="action">Author</th>
+      <th scope="col" class="action">Category</th>
+      <th scope="col" class="action">Price</th>
+      <th scope="col" class="action">AdminId</th>
+      <th scope="col" class="action">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- LOOPING DATA -->
+    <tr *ngFor="let book of data">
+      <td>{{ book.id }}</td>
+      <td>{{ book.bookname }}</td>
+      <td>{{ book.isbn }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.category }}</td>
+      <td>{{ book.price }}</td>
+      <td>{{ book.admin_id }}</td>
+      <!-- ACTIONS -->
+      <td>
+        <!-- UPDATE BUTTON -->
+        <a routerLink="/update/{{book.id}}">
+          <button type="button" class="btn btn-dark">Edit</button>
+        </a>
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#deleteModal"
+          (click)="deleteBook(book.isbn)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- ADD BUTTON TO ADD NEW BOOKS -->
+<div class="container">
+  <a routerLink="/addbooks">
+    <button type="button" class="btn btn-secondary btn-square">ADD BOOKS</button>
+  </a>
+</div>

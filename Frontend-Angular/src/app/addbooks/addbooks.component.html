@@ -1,0 +1,102 @@
+<section class="vh-100" style="background-color: #9a616d">
+  <div class="container py-5 h-100" style="background-size: cover">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img
+                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&w=1000&q=80"
+                alt="login form"
+                class="img-fluid"
+                style="border-radius: 1rem 0 0 1rem"
+              />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                <form (ngSubmit)="add()" [formGroup]="addForm" novalidate>
+                  <div class="alert alert-danger" [hidden]="!error || isLoading" translate>bOOK Details incorrect.</div>
+                  <div class="m-3">
+                    <!-- ISBN FEILD -->
+                    <div class="col-md-12">
+                      <label>ISBN</label>
+                      <input type="text" class="form-control" formControlName="isbn" id="isbn" required />
+                      <small
+                        [hidden]="addForm.controls['isbn'].valid || addForm.controls['isbn'].untouched"
+                        class="text-danger"
+                        translate>
+                        ISBN is required and must be 13 digits
+                      </small>
+                    </div>
+                    <!-- BOOKNAME FEILD -->
+                    <div class="col-md-12">
+                      <label>Bookname</label>
+                      <input type="text" class="form-control" formControlName="bookname" id="bookname" required />
+                      <small
+                        [hidden]="addForm.controls['bookname'].valid || addForm.controls['bookname'].untouched"
+                        class="text-danger"
+                        translate
+                      >
+                        Bookname is required
+                      </small>
+                    </div>
+                    <!-- AUTHOR FEILD-->
+                    <div class="col-md-12">
+                      <label>Author</label
+                      ><input type="text" class="form-control" formControlName="author" id="author" required />
+                      <small
+                        [hidden]="addForm.controls['author'].valid || addForm.controls['author'].untouched"
+                        class="text-danger"
+                        translate
+                      >
+                        Author is required
+                      </small>
+                    </div>
+                    <!-- CATEGORY FEILD-->
+                    <div class="col-md-12">
+                      <label>Category</label>
+                      <select class="form-select mt-3" formControlName="category" id="category" required>
+                        <option *ngFor="let i of data" [value]="i.id">{{ i.category }}</option>
+                      </select>
+                    </div>
+                    <!-- PRICE FEILD -->
+                    <div class="col-md-12">
+                      <label>Price</label>
+                      <input type="tel" class="form-control" formControlName="price" id="price" required />
+                      <small
+                        [hidden]="addForm.controls['price'].valid || addForm.controls['price'].untouched"
+                        class="text-danger"
+                        translate
+                      >
+                        Price is required
+                      </small>
+                    </div>
+                    <!-- ADMINID FEILD -->
+                    <div class="col-md-12">
+                      <label>Admin Id</label>
+                      <input type="tel" class="form-control" formControlName="adminid" id="adminid" required />
+                      <small
+                        [hidden]="addForm.controls['adminid'].valid || addForm.controls['adminid'].untouched"
+                        class="text-danger"
+                        translate
+                      >
+                        AdminId is required
+                      </small>
+                    </div>
+                    <!-- ADD BUTTON -->
+                    <div class="m-3">
+                      <button class="btn btn-primary w-100" type="submit" [disabled]="addForm.invalid || isLoading">
+                        <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+                        <span translate>Add</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

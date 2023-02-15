@@ -1,0 +1,37 @@
+
+.btn-outline-dark {
+
+  margin-left: 800px;
+}
+h5.card-title {
+  font-size: bold;
+ 
+}
+p.card-text {
+  font-size: large;
+}
+.navbar , .container, .navbar , .container-fluid, .navbar  .container-sm, .navbar  .container-md, .navbar  .container-lg, .navbar  .container-xl, .navbar  .container-xxl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  background-color: gray;
+  line-height: 3;
+  outline-width: 190px;
+}
+.input-group .btn {
+  position: relative;
+  z-index: 2;
+  line-height: 3;
+}
+.input-group .btn {
+  position: relative;
+  z-index: 2;
+  line-height: 3;
+  width: 62px;
+}
+ input-group:not(.has-validation) , .dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation) , .form-floating:not(:last-child) , .form-control, .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+ 
+}
